@@ -37,15 +37,29 @@ class ListVC: UIViewController {
         tableView.dataSource = self
         tableView.delegate = self
         tableView.register(UINib(nibName: "ListCell", bundle: nil), forCellReuseIdentifier: ListCell.cellIdentifier)
+        
+        //Add Segmented Controll to titleView
+        let segmentedControl = UISegmentedControl(items: ["All", "Favorites"])
+        segmentedControl.sizeToFit()
+        segmentedControl.selectedSegmentIndex = viewModel.curSection
+        self.navigationItem.titleView = segmentedControl
+        segmentedControl.addTarget(self, action: #selector(segControlAction(_:)), for: .valueChanged)
+    }
+    
+    @IBAction func segControlAction(_ sender: UISegmentedControl) {
+        viewModel.setCurSectionIndex(curSectionIndex: sender.selectedSegmentIndex)
+        tableView.reloadData()
     }
 }
 
 
 extension ListVC: UITableViewDataSource, UITableViewDelegate {
     func numberOfSections(in tableView: UITableView) -> Int {
+        print(viewModel.sections.count)
         return viewModel.sections.count
     }
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        print(viewModel.sections[section].count)
         return viewModel.sections[section].count
     }
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -53,5 +67,13 @@ extension ListVC: UITableViewDataSource, UITableViewDelegate {
         cell.configure(item: viewModel[indexPath], delegate: viewModel)
         
         return cell
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        
+        let detailViewModel = DetailViewModel(item: viewModel[indexPath])
+        let vc = DetailVC.createWith(storyboardName: "Product", vcIdentifier: "DetailVC", title: "Product Detail", viewModel: detailViewModel)
+        self.navigationController?.pushViewController(vc, animated: true)
+        
     }
 }

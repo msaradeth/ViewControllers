@@ -17,7 +17,7 @@ protocol ListViewModelDelegate {
 class ListViewModel: NSObject {
     var sections: [[Product]]
     var apiService: ProductApiService
-    private var curSection: Int
+    var curSection: Int
     
     init(sections: [[Product]], curSegment: Int, apiService: ProductApiService) {
         self.sections = sections
@@ -32,7 +32,10 @@ class ListViewModel: NSObject {
     
     func setCurSectionIndex(curSectionIndex: Int) {
         self.curSection = curSectionIndex
-        sections[1] = sections[0].filter({ Cache.shared.isFavorite(id: $0.id) })
+        if curSection == 1 {
+            sections[1] = sections[0].filter({ Cache.shared.isFavorite(id: $0.id) })
+            print(sections[1] )
+        }        
     }
     
     func loadData(completion: @escaping () -> Void) -> Void {
@@ -41,6 +44,7 @@ class ListViewModel: NSObject {
             completion()
         }
     }
+
 }
 
 extension ListViewModel: ListViewModelDelegate {

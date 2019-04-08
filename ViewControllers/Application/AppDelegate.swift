@@ -21,8 +21,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         let sections = [emptyArr, emptyArr]
         let apiService = ProductApiService()
         let viewModel = ListViewModel(sections: sections, curSegment: startSegmentIndex, apiService: apiService)
-        let vc = ListVC.createWith(storyboardName: "TableView", vcIdentifier: "ListVC", title: "Products", viewModel: viewModel)
+        let vc = ListVC.createWith(storyboardName: "Product", vcIdentifier: "ListVC", title: "Products", viewModel: viewModel)        
         let rootNav = UINavigationController(rootViewController: vc)
+        rootNav.navigationBar.prefersLargeTitles = true
         
         window = UIWindow(frame: UIScreen.main.bounds)
         window?.rootViewController = rootNav

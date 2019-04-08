@@ -7,11 +7,20 @@
 //
 
 import Foundation
+import UIKit
 
 class DetailViewModel: NSObject {
     var item: ProductViewModel
     
     init(item: ProductViewModel) {
         self.item = item
+    }
+    
+    func getImage(completion: @escaping (UIImage?) -> Void) {
+        if let image = Cache.shared.image[item.imageUrl] {
+            completion(image)
+        }else {
+            Util.loadImage(urlString: item.imageUrl, completion: completion)
+        }
     }
 }

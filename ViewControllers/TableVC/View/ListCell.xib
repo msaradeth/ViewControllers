@@ -29,8 +29,9 @@
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="qfW-us-scX">
                         <rect key="frame" x="519" y="0.0" width="60" height="66"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Ne9-Ej-JqP">
+                            <imageView contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Ne9-Ej-JqP">
                                 <rect key="frame" x="12" y="13" width="40" height="40"/>
+                                <gestureRecognizers/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="40" id="Bxg-Tk-mdf"/>
                                     <constraint firstAttribute="height" constant="40" id="kaV-1L-FGw"/>

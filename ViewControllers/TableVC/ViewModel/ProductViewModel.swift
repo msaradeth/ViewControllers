@@ -17,7 +17,7 @@ struct ProductViewModel {
     var imageUrl: String
     
     init(product: Product) {
-        self.id = product.imageUrl
+        self.id = product.id
         self.name = product.name
         self.description = product.description
         self.price = Util.priceString(price: product.price)

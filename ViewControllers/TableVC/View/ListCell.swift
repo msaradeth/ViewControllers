@@ -27,9 +27,14 @@ class ListCell: UITableViewCell {
         titleLabel.text = item.name
         detailLabel.text = item.price
 
-        //Set favorite/
+        //add UITapGestureRecognizer
+        let tapGesture = UITapGestureRecognizer(target: self, action: #selector(toggleFavorite(_:)))
+        favContainerView.addGestureRecognizer(tapGesture)
+        
+        //set tumbnail and favorite images
         favorite.image = Cache.shared.isFavorite(id: item.id) ? favoriteImage : notFavoriteImage
         
+        //Get image from memory if exist or load from url
         delegate?.getImage(urlString: item.thumbnailUrl, completion: { [weak self] (image) in
             DispatchQueue.main.async {
                 self?.tumbnail.image = image
@@ -37,6 +42,11 @@ class ListCell: UITableViewCell {
         })
     }
 
+    @IBAction func toggleFavorite(_ sender: UITapGestureRecognizer) {
+        let toggleMyFavorite = !Cache.shared.isFavorite(id: item.id)
+        favorite.image = toggleMyFavorite ? favoriteImage : notFavoriteImage
+        Cache.shared.setFavorite(id: item.id, favorite: toggleMyFavorite)
+    }
     
     
 }
