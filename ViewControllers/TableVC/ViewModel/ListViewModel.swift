@@ -33,6 +33,7 @@ class ListViewModel: NSObject {
     func setCurSectionIndex(curSectionIndex: Int) {
         self.curSection = curSectionIndex
         if curSection == 1 {
+            sections[1].removeAll()
             sections[1] = sections[0].filter({ Cache.shared.isFavorite(id: $0.id) })
             print(sections[1] )
         }        

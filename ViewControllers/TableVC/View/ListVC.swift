@@ -70,7 +70,7 @@ extension ListVC: UITableViewDataSource, UITableViewDelegate {
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        
+        tableView.deselectRow(at: indexPath, animated: true)
         let detailViewModel = DetailViewModel(item: viewModel[indexPath])
         let vc = DetailVC.createWith(storyboardName: "Product", vcIdentifier: "DetailVC", title: "Product Detail", viewModel: detailViewModel)
         self.navigationController?.pushViewController(vc, animated: true)
