@@ -43,9 +43,8 @@ class ListCell: UITableViewCell {
     }
 
     @IBAction func toggleFavorite(_ sender: UITapGestureRecognizer) {
-        let toggleMyFavorite = !Cache.shared.isFavorite(id: item.id)
-        favorite.image = toggleMyFavorite ? favoriteImage : notFavoriteImage
-        Cache.shared.setFavorite(id: item.id, favorite: toggleMyFavorite)
+        let myFavorite = delegate?.toggleFavorite(id: item.id) ?? false
+        favorite.image = myFavorite ? favoriteImage : notFavoriteImage
     }
     
     

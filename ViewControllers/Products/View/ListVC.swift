@@ -54,24 +54,20 @@ class ListVC: UIViewController {
 
 
 extension ListVC: UITableViewDataSource, UITableViewDelegate {
-    func numberOfSections(in tableView: UITableView) -> Int {
-        print(viewModel.sections.count)
-        return viewModel.sections.count
-    }
+    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        print(viewModel.sections[section].count)
-        return viewModel.sections[section].count
+        return viewModel.count
     }
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: ListCell.cellIdentifier, for: indexPath) as! ListCell
-        cell.configure(item: viewModel[indexPath], delegate: viewModel)
+        cell.configure(item: viewModel[indexPath.row], delegate: viewModel)
         
         return cell
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
-        let detailViewModel = DetailViewModel(item: viewModel[indexPath])
+        let detailViewModel = DetailViewModel(item: viewModel[indexPath.row])
         let vc = DetailVC.createWith(storyboardName: "Product", vcIdentifier: "DetailVC", title: "Product Detail", viewModel: detailViewModel)
         self.navigationController?.pushViewController(vc, animated: true)
         

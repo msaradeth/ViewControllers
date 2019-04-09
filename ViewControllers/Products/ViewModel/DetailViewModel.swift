@@ -20,7 +20,11 @@ class DetailViewModel: NSObject {
         if let image = Cache.shared.image[item.imageUrl] {
             completion(image)
         }else {
-            Util.loadImage(urlString: item.imageUrl, completion: completion)
+            Util.loadImage(urlString: item.imageUrl, completion: { [weak self] (image) in
+                completion(image)
+                guard let self = self else { return }
+                Cache.shared.image[self.item.imageUrl] = image
+            })
         }
     }
 }

@@ -158,7 +158,7 @@
 			children = (
 				5E4735D9225BC91000779329 /* Extensions */,
 				5E4735C8225BC3CB00779329 /* Application */,
-				5E4735C7225BC3AA00779329 /* TableVC */,
+				5E4735C7225BC3AA00779329 /* Products */,
 				5E47359B225BC39D00779329 /* ViewController.swift */,
 				5E47359D225BC39D00779329 /* Main.storyboard */,
 				5E4735A0225BC39E00779329 /* Assets.xcassets */,
@@ -186,7 +186,7 @@
 			path = ViewControllersUITests;
 			sourceTree = "<group>";
 		};
-		5E4735C7225BC3AA00779329 /* TableVC */ = {
+		5E4735C7225BC3AA00779329 /* Products */ = {
 			isa = PBXGroup;
 			children = (
 				5E4735CC225BC43900779329 /* Model */,
@@ -195,7 +195,7 @@
 				5E4735EE225BF4DF00779329 /* Lib */,
 				5E4735C9225BC41100779329 /* Services */,
 			);
-			path = TableVC;
+			path = Products;
 			sourceTree = "<group>";
 		};
 		5E4735C8225BC3CB00779329 /* Application */ = {
@@ -632,7 +632,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 12.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -687,7 +687,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 12.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
@@ -703,8 +703,9 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = LP46D328FV;
+				DEVELOPMENT_TEAM = QAJNW7456U;
 				INFOPLIST_FILE = ViewControllers/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -722,8 +723,9 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = LP46D328FV;
+				DEVELOPMENT_TEAM = QAJNW7456U;
 				INFOPLIST_FILE = ViewControllers/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -742,7 +744,7 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = LP46D328FV;
+				DEVELOPMENT_TEAM = QAJNW7456U;
 				INFOPLIST_FILE = ViewControllersTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -764,7 +766,7 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = LP46D328FV;
+				DEVELOPMENT_TEAM = QAJNW7456U;
 				INFOPLIST_FILE = ViewControllersTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -785,7 +787,7 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = LP46D328FV;
+				DEVELOPMENT_TEAM = QAJNW7456U;
 				INFOPLIST_FILE = ViewControllersUITests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -806,7 +808,7 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = LP46D328FV;
+				DEVELOPMENT_TEAM = QAJNW7456U;
 				INFOPLIST_FILE = ViewControllersUITests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",

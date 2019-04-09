@@ -20,17 +20,17 @@
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Hap-N6-qT7">
-                        <rect key="frame" x="8" y="8" width="50" height="50"/>
+                        <rect key="frame" x="8" y="42" width="50" height="75"/>
                         <constraints>
-                            <constraint firstAttribute="height" constant="50" id="fJL-Kg-pbZ"/>
+                            <constraint firstAttribute="height" constant="75" id="fJL-Kg-pbZ"/>
                             <constraint firstAttribute="width" constant="50" id="x3n-xk-gAy"/>
                         </constraints>
                     </imageView>
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="qfW-us-scX">
-                        <rect key="frame" x="519" y="0.0" width="60" height="66"/>
+                        <rect key="frame" x="519" y="0.0" width="60" height="158.5"/>
                         <subviews>
                             <imageView contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Ne9-Ej-JqP">
-                                <rect key="frame" x="12" y="13" width="40" height="40"/>
+                                <rect key="frame" x="12" y="59.5" width="40" height="40"/>
                                 <gestureRecognizers/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="40" id="Bxg-Tk-mdf"/>
@@ -46,7 +46,7 @@
                         </constraints>
                     </view>
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="lNE-fr-e1d">
-                        <rect key="frame" x="66" y="8" width="445" height="50"/>
+                        <rect key="frame" x="66" y="54.5" width="445" height="50"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1Ax-Cx-flQ">
                                 <rect key="frame" x="0.0" y="0.0" width="445" height="21"/>
@@ -77,11 +77,9 @@
                     <constraint firstItem="qfW-us-scX" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" id="9tl-qI-KrL"/>
                     <constraint firstItem="lNE-fr-e1d" firstAttribute="leading" secondItem="Hap-N6-qT7" secondAttribute="trailing" constant="8" id="NXU-rp-bru"/>
                     <constraint firstItem="Hap-N6-qT7" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="8" id="QAx-71-Nf9"/>
-                    <constraint firstAttribute="bottom" secondItem="Hap-N6-qT7" secondAttribute="bottom" constant="8" id="T0J-kD-tp3"/>
                     <constraint firstAttribute="bottom" secondItem="qfW-us-scX" secondAttribute="bottom" id="bj7-Zt-T76"/>
                     <constraint firstItem="lNE-fr-e1d" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="eEH-0O-2IN"/>
                     <constraint firstAttribute="trailing" secondItem="qfW-us-scX" secondAttribute="trailing" id="pMG-6Y-Lqk"/>
-                    <constraint firstItem="Hap-N6-qT7" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="8" id="pq9-dY-AsR"/>
                     <constraint firstItem="qfW-us-scX" firstAttribute="leading" secondItem="lNE-fr-e1d" secondAttribute="trailing" constant="8" id="sSh-sz-ASG"/>
                     <constraint firstItem="Hap-N6-qT7" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="yYl-Rf-580"/>
                     <constraint firstItem="qfW-us-scX" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="z8k-Bh-f6l"/>

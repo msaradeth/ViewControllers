@@ -11,6 +11,7 @@ import UIKit
 
 protocol ListViewModelDelegate {
     func getImage(urlString: String, completion: @escaping (UIImage?) -> Void)
+    func toggleFavorite(id: String) -> Bool
 }
 
 
@@ -18,24 +19,24 @@ class ListViewModel: NSObject {
     var sections: [[Product]]
     var apiService: ProductApiService
     var curSection: Int
+    var count: Int {
+        return sections[curSection].count
+    }
+    subscript(index: Int) -> ProductViewModel {
+        return ProductViewModel(product: sections[curSection][index])
+    }
     
     init(sections: [[Product]], curSegment: Int, apiService: ProductApiService) {
         self.sections = sections
         self.curSection = curSegment
         self.apiService = apiService
     }
-    
-    
-    subscript(indexPath: IndexPath) -> ProductViewModel {
-        return ProductViewModel(product: sections[indexPath.section][indexPath.row])
-    }
+        
     
     func setCurSectionIndex(curSectionIndex: Int) {
         self.curSection = curSectionIndex
         if curSection == 1 {
-            sections[1].removeAll()
             sections[1] = sections[0].filter({ Cache.shared.isFavorite(id: $0.id) })
-            print(sections[1] )
         }        
     }
     
@@ -54,7 +55,16 @@ extension ListViewModel: ListViewModelDelegate {
         if let image = Cache.shared.thumbnail[urlString] {
             completion(image)
         }else {
-            Util.loadImage(urlString: urlString, completion: completion)
+            Util.loadImage(urlString: urlString, completion: { (image) in
+                completion(image)
+                Cache.shared.thumbnail[urlString] = image
+            })
         }
+    }
+    
+    func toggleFavorite(id: String) -> Bool {
+        let toggleMyFavorite = !Cache.shared.isFavorite(id: id)
+        Cache.shared.setFavorite(id: id, favorite: toggleMyFavorite)
+        return toggleMyFavorite
     }
 }
